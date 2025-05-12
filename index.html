@@ -137,7 +137,80 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
-			<a href="/2025/02/14/hello-world/" >一个测试</a>
+			<a href="/2025/05/01/Hexo插入本地图片不显示问题/" >Hexo插入本地图片不显示问题</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2025-05-01  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>几乎尝试了所有中文博客提供的方法，但还是没解决，于是回头去看Hexo文档，找到解决方法，步骤如下：</p>
+<p>1.安装<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a></p>
+<pre><code>$ npm install hexo-renderer-marked --save
+</code></pre>
+<p>2.在需要插入图片的地方使用Markdown语法插入图片</p>
+<pre><code>![](pictures/1.png)
+</code></pre>
+<p>问题解决。</p>
+
+	
+	</div>
+  <a type="button" href="/2025/05/01/Hexo插入本地图片不显示问题/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2025/05/01/BUUCTF-极客大挑战-2019-PHP/" >BUUCTF[极客大挑战 2019]PHP</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2025-05-01  </div>
+		</div>
+	</div>
+	
+
+
+			<div class="entry">
+  <div class="row">
+	
+	
+		<p>最近在做BUUCTF上的题，虽然很老了但是因为是新手所以偶尔遇到不太细节的Writeup还是会想自己写一份。</p>
+<p>点开题目，会发现一只会跟着鼠标动的猫猫。</p>
+<p><img src="/2025/05/01/BUUCTF-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-PHP/1.png"></p>
+<p>查看页面源代码及BurpSuite拦截均未发现异常，那只好来扫一下目录了！</p>
+<p>首先使用dirsearch</p>
+<pre><code>python3 dirsearch.py -u http://eaa995f8-86f5-4e8c-a252-b6d8bf44649d.node5.buuoj.cn:81/
+</code></pre>
+<p><img src="/2025/05/01/BUUCTF-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-PHP/2.png"></p>
+<p>没有找到一个200…换dirmap试试。</p>
+<pre><code>python3 dirmap.py -i http://eaa995f8-86f5-4e8c-a252-b6d8bf44649d.node5.buuoj.cn:81/ -lcf
+</code></pre>
+<p><img src="/2025/05/01/BUUCTF-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-PHP/3.png"></p>
+	
+	</div>
+  <a type="button" href="/2025/05/01/BUUCTF-极客大挑战-2019-PHP/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
+			<a href="/2025/02/14/一个测试/" >一个测试</a>
 		</h3>
 		</div>
 	<div class="col-md-4">
@@ -169,7 +242,7 @@ hr:nth-of-type(1) {
 
 	
 	</div>
-  <a type="button" href="/2025/02/14/hello-world/#more" class="btn btn-default more">Read More</a>
+  <a type="button" href="/2025/02/14/一个测试/#more" class="btn btn-default more">Read More</a>
 </div>
 
 		
@@ -208,6 +281,18 @@ hr:nth-of-type(1) {
 			
 		
 			
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">		
+		
+			<li><a href="/tags/Hexo/">Hexo<span>1</span></a></li>
+		
+			<li><a href="/tags/BUUCTF-Web/">BUUCTF Web<span>1</span></a></li>
+		
+		 
+		</ul>
+	</div>
+
 
 		
 			
@@ -216,7 +301,15 @@ hr:nth-of-type(1) {
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2025/02/14/hello-world/" ><i class="fa fa-file-o"></i>一个测试</a>
+        <a href="/2025/05/01/Hexo插入本地图片不显示问题/" ><i class="fa fa-file-o"></i>Hexo插入本地图片不显示问题</a>
+      </li>
+    
+      <li>
+        <a href="/2025/05/01/BUUCTF-极客大挑战-2019-PHP/" ><i class="fa fa-file-o"></i>BUUCTF[极客大挑战 2019]PHP</a>
+      </li>
+    
+      <li>
+        <a href="/2025/02/14/一个测试/" ><i class="fa fa-file-o"></i>一个测试</a>
       </li>
     
   </ul>

