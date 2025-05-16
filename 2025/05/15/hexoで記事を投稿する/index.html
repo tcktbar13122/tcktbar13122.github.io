@@ -6,20 +6,24 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>Hexo插入本地图片不显示问题 | tcktbar13122&#39;s blog</title>
+  <title>hexoで記事を投稿する | tcktbar13122&#39;s blog</title>
   <meta name="author" content="tcktbar13122">
   
-  <meta name="description" content="几乎尝试了所有中文博客提供的方法，但还是没解决，于是回头去看Hexo文档，找到解决方法，步骤如下：
-1.安装hexo-renderer-marked
-$ npm install hexo-renderer-marked --save
+  <meta name="description" content="1.ファイル_config.ymlで設定変更（おすすめ）この手順を行うと、新しい記事を作成するたびに、その記事のフォルダが同時に生成されます。しなくても記事に影響ないけど、管理しやすくなるのでお勧めです。
+_config.ymlを開いて、post_asset_folderをtrueに設定します。
+post_asset_folder: true
 
-2.在需要插入图片的地方使用Markdown语法插入图片
-![]">
+
+2.新しい記事を作成するブログのディレクトリで、git bashを開き、次のコマンドを実行します。
+hexo new 記事名
+
+これで&amp;#x2F;source&amp;#x2F;_posts&amp;#x2F;フォルダの中に、「記事名.md」というmarkdownファイルが生成されます。このファイルで記事を編集することができます。
+手順1をしたのなら、「記事名」というフォルダも同時に生成されます。記事の画像とかを入れるとより便利に管理できます。"> 
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Hexo插入本地图片不显示问题"/>
+  <meta property="og:title" content="hexoで記事を投稿する"/>
   <meta property="og:site_name" content="tcktbar13122&#39;s blog"/>
 
   
@@ -119,7 +123,7 @@ $ npm install hexo-renderer-marked --save
 
 	
 		<div class="page-header">
-			<h1> Hexo插入本地图片不显示问题</h1>
+			<h1> hexoで記事を投稿する</h1>
 		</div>
 	
 
@@ -136,14 +140,34 @@ $ npm install hexo-renderer-marked --save
 	<div class="mypage">		
 	  		
 
-	  <p>几乎尝试了所有中文博客提供的方法，但还是没解决，于是回头去看Hexo文档，找到解决方法，步骤如下：</p>
-<p>1.安装<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a></p>
-<pre><code>$ npm install hexo-renderer-marked --save
+	  <h3 id="1-ファイル-config-ymlで設定変更（おすすめ）"><a href="#1-ファイル-config-ymlで設定変更（おすすめ）" class="headerlink" title="1.ファイル_config.ymlで設定変更（おすすめ）"></a>1.ファイル_config.ymlで設定変更（おすすめ）</h3><p>この手順を行うと、新しい記事を作成するたびに、その記事のフォルダが同時に生成されます。しなくても記事に影響ないけど、管理しやすくなるのでお勧めです。</p>
+<p>_config.ymlを開いて、post_asset_folderをtrueに設定します。</p>
+<pre><code>post_asset_folder: true
 </code></pre>
-<p>2.在需要插入图片的地方使用Markdown语法插入图片</p>
-<pre><code>![](pictures/1.png)
+<hr>
+<h3 id="2-新しい記事を作成する"><a href="#2-新しい記事を作成する" class="headerlink" title="2.新しい記事を作成する"></a>2.新しい記事を作成する</h3><p>ブログのディレクトリで、git bashを開き、次のコマンドを実行します。</p>
+<pre><code>hexo new 記事名
 </code></pre>
-<p>问题解决。</p>
+<p>これで&#x2F;source&#x2F;_posts&#x2F;フォルダの中に、「記事名.md」というmarkdownファイルが生成されます。このファイルで記事を編集することができます。</p>
+<p>手順1をしたのなら、「記事名」というフォルダも同時に生成されます。記事の画像とかを入れるとより便利に管理できます。</p>
+<hr>
+<h3 id="3-記事に画像を入れる（必要があれば）"><a href="#3-記事に画像を入れる（必要があれば）" class="headerlink" title="3.記事に画像を入れる（必要があれば）"></a>3.記事に画像を入れる（必要があれば）</h3><p>hexoドキュメントによると、<a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a>をインストールする必要があります。</p>
+<p>git bashで次のコマンドを実行します。</p>
+<pre><code>npm install hexo-renderer-marked --save
+</code></pre>
+<p>そしたら、mdファイルで画像を挿入したいところでMarkdownの文法を使用して画像を挿入することができます。</p>
+<p>手順1をしたのなら、以下の構造になります。</p>
+<pre><code>![](記事名/画像.png)
+</code></pre>
+<hr>
+<h3 id="4-作成した記事をローカルプレビューする"><a href="#4-作成した記事をローカルプレビューする" class="headerlink" title="4.作成した記事をローカルプレビューする"></a>4.作成した記事をローカルプレビューする</h3><p>Git Bashで次のコマンドを実行したら、作成した記事を<code>http://localhost:4000/</code>でローカルプレビューできます。</p>
+<pre><code>hexo s
+</code></pre>
+<hr>
+<h3 id="5-記事をGithubにアップロードする"><a href="#5-記事をGithubにアップロードする" class="headerlink" title="5.記事をGithubにアップロードする"></a>5.記事をGithubにアップロードする</h3><p>記事がローカルサーバーで正しく表示されたら、Git Bashで次のコマンドを実行します。</p>
+<pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre>
+<p>ブラウザで自分のブログドメインにアクセスすると、投稿された記事が表示されます。</p>
 
 	  <div class="article-footer-copyright">
 
@@ -160,13 +184,12 @@ $ npm install hexo-renderer-marked --save
 
     
     
-    <a href="/2025/05/15/hexoで記事を投稿する/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2025/05/01/BUUCTF-极客大挑战-2019-PHP/" type="button" class="btn btn-default ">Next<i
+    <a href="/2025/05/01/Hexo插入本地图片不显示问题/" type="button" class="btn btn-default ">Next<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -200,7 +223,7 @@ $ npm install hexo-renderer-marked --save
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2025-05-01 
+	2025-05-15 
 	</div>
 	
 
@@ -213,7 +236,7 @@ $ npm install hexo-renderer-marked --save
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/Hexo/">Hexo<span>2</span></a></li>
+  <li><a href="/tags/Hexo/">Hexo<span>2</span></a></li> <li><a href="/tags/Japanese/">Japanese<span>1</span></a></li>
     </ul>
 	</div>
 		

@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>hexoで記事を投稿する</title>
+      <link href="/2025/05/15/hexo%E3%81%A7%E8%A8%98%E4%BA%8B%E3%82%92%E6%8A%95%E7%A8%BF%E3%81%99%E3%82%8B/"/>
+      <url>/2025/05/15/hexo%E3%81%A7%E8%A8%98%E4%BA%8B%E3%82%92%E6%8A%95%E7%A8%BF%E3%81%99%E3%82%8B/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-ファイル-config-ymlで設定変更（おすすめ）"><a href="#1-ファイル-config-ymlで設定変更（おすすめ）" class="headerlink" title="1.ファイル_config.ymlで設定変更（おすすめ）"></a>1.ファイル_config.ymlで設定変更（おすすめ）</h3><p>この手順を行うと、新しい記事を作成するたびに、その記事のフォルダが同時に生成されます。しなくても記事に影響ないけど、管理しやすくなるのでお勧めです。</p><p>_config.ymlを開いて、post_asset_folderをtrueに設定します。</p><pre><code>post_asset_folder: true</code></pre><hr><h3 id="2-新しい記事を作成する"><a href="#2-新しい記事を作成する" class="headerlink" title="2.新しい記事を作成する"></a>2.新しい記事を作成する</h3><p>ブログのディレクトリで、git bashを開き、次のコマンドを実行します。</p><pre><code>hexo new 記事名</code></pre><p>これで&#x2F;source&#x2F;_posts&#x2F;フォルダの中に、「記事名.md」というmarkdownファイルが生成されます。このファイルで記事を編集することができます。</p><p>手順1をしたのなら、「記事名」というフォルダも同時に生成されます。記事の画像とかを入れるとより便利に管理できます。</p><hr><h3 id="3-記事に画像を入れる（必要があれば）"><a href="#3-記事に画像を入れる（必要があれば）" class="headerlink" title="3.記事に画像を入れる（必要があれば）"></a>3.記事に画像を入れる（必要があれば）</h3><p>hexoドキュメントによると、<a href="https://github.com/hexojs/hexo-renderer-marked">hexo-renderer-marked</a>をインストールする必要があります。</p><p>git bashで次のコマンドを実行します。</p><pre><code>npm install hexo-renderer-marked --save</code></pre><p>そしたら、mdファイルで画像を挿入したいところでMarkdownの文法を使用して画像を挿入することができます。</p><p>手順1をしたのなら、以下の構造になります。</p><pre><code>![](記事名/画像.png)</code></pre><hr><h3 id="4-作成した記事をローカルプレビューする"><a href="#4-作成した記事をローカルプレビューする" class="headerlink" title="4.作成した記事をローカルプレビューする"></a>4.作成した記事をローカルプレビューする</h3><p>Git Bashで次のコマンドを実行したら、作成した記事を<code>http://localhost:4000/</code>でローカルプレビューできます。</p><pre><code>hexo s</code></pre><hr><h3 id="5-記事をGithubにアップロードする"><a href="#5-記事をGithubにアップロードする" class="headerlink" title="5.記事をGithubにアップロードする"></a>5.記事をGithubにアップロードする</h3><p>記事がローカルサーバーで正しく表示されたら、Git Bashで次のコマンドを実行します。</p><pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code></pre><p>ブラウザで自分のブログドメインにアクセスすると、投稿された記事が表示されます。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Japanese </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hexo插入本地图片不显示问题</title>
       <link href="/2025/05/01/Hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/"/>
       <url>/2025/05/01/Hexo%E6%8F%92%E5%85%A5%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E4%B8%8D%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/</url>
@@ -33,7 +54,9 @@
       
         <tags>
             
-            <tag> BUUCTF Web </tag>
+            <tag> BUUCTF </tag>
+            
+            <tag> Web </tag>
             
         </tags>
       
