@@ -6,13 +6,18 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>Archives | tcktbar13122&#39;s blog</title>
+  <title>pingコマンドで通信先のOSを判別する方法 | tcktbar13122&#39;s blog</title>
   <meta name="author" content="tcktbar13122">
+  
+  <meta name="description" content="異なるOSのレスポンスタイムとTTL（Time To Live）値から、通信先のOSを推測することができます。
+1. コマンドプロンプト（Windows）またはターミナル（MacおよびLinux）を開く。2. 次のコマンドを入力する：ping IPアドレスまたはドメイン名
+
+3. pingの結果から">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="pingコマンドで通信先のOSを判別する方法"/>
   <meta property="og:site_name" content="tcktbar13122&#39;s blog"/>
 
   
@@ -109,156 +114,148 @@
   	<div class="content">
     	 
 
-<!-- title -->
-<div class="page-header">
-  <h1 class="archive-title"><i class="fa fa-archive"></i> Archives</h1>
-</div>
 
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
 	
-
-	  <div id="top_search"></div>
-
-	  <div class="archive">
-		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2025">2025<b class="caret"></b></h4>
-			<ul id="2025" class="collapse in">
-			
-		
-		<li class="listing-item">
-		<span class="date_class"> 2025-07-20 </span> &raquo;
-		
-		   <span class="title"><a href="/2025/07/20/pingコマンドで通信先のOSを判別する方法/" >pingコマンドで通信先のOSを判別する方法</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2025-05-15 </span> &raquo;
-		
-		   <span class="title"><a href="/2025/05/15/hexoで記事を投稿する/" >hexoで記事を投稿する</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2025-05-01 </span> &raquo;
-		
-		   <span class="title"><a href="/2025/05/01/Hexo插入本地图片不显示问题/" >Hexo插入本地图片不显示问题</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2025-05-01 </span> &raquo;
-		
-		   <span class="title"><a href="/2025/05/01/BUUCTF-极客大挑战-2019-PHP/" >BUUCTF[极客大挑战 2019]PHP</a></span>
-		
-		</li>			
-		
-		
-		
-		<li class="listing-item">
-		<span class="date_class"> 2025-02-14 </span> &raquo;
-		
-		   <span class="title"><a href="/2025/02/14/一个测试/" >一个测试</a></span>
-		
-		</li>			
-		
-		</ul>
+		<div class="page-header">
+			<h1> pingコマンドで通信先のOSを判別する方法</h1>
 		</div>
-
-</div> <!-- col-md-9/col-md-12 -->
-
-
-<div class="col-md-3">
-	<div id="sidebar">
 	
-			
-  <div id="site_search">
-   <div class="form-group">
-    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search" class="st-search-input st-default-search-input form-control"/>
-   </div>  
-  <div id="local-search-result"></div>
-  </div>
 
 
-		
-			
-		
-			
-	<div class="widget">
-		<h4>Tag Cloud</h4>
-		<ul class="tag_box inline list-unstyled">		
-		
-			<li><a href="/tags/Hexo/">Hexo<span>2</span></a></li>
-		
-			<li><a href="/tags/Japanese/">Japanese<span>2</span></a></li>
-		
-			<li><a href="/tags/BUUCTF/">BUUCTF<span>1</span></a></li>
-		
-			<li><a href="/tags/Web/">Web<span>1</span></a></li>
-		
-		 
-		</ul>
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>異なるOSのレスポンスタイムとTTL（Time To Live）値から、通信先のOSを推測することができます。</p>
+<h4 id="1-コマンドプロンプト（Windows）またはターミナル（MacおよびLinux）を開く。"><a href="#1-コマンドプロンプト（Windows）またはターミナル（MacおよびLinux）を開く。" class="headerlink" title="1. コマンドプロンプト（Windows）またはターミナル（MacおよびLinux）を開く。"></a>1. コマンドプロンプト（Windows）またはターミナル（MacおよびLinux）を開く。</h4><h4 id="2-次のコマンドを入力する："><a href="#2-次のコマンドを入力する：" class="headerlink" title="2. 次のコマンドを入力する："></a>2. 次のコマンドを入力する：</h4><pre><code>ping IPアドレスまたはドメイン名
+</code></pre>
+<h4 id="3-pingの結果から、TTL値で通信先のOSがわかる。"><a href="#3-pingの結果から、TTL値で通信先のOSがわかる。" class="headerlink" title="3. pingの結果から、TTL値で通信先のOSがわかる。"></a>3. pingの結果から、TTL値で通信先のOSがわかる。</h4><table>
+<thead>
+<tr>
+<th>OS</th>
+<th>TTL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LINUX</td>
+<td>64</td>
+</tr>
+<tr>
+<td>WIN2K&#x2F;NT</td>
+<td>128</td>
+</tr>
+<tr>
+<td>WINDOWS</td>
+<td>32</td>
+</tr>
+<tr>
+<td>UNIX</td>
+<td>255</td>
+</tr>
+</tbody></table>
+<p>もし上記のいずれの数値でもない場合は、それより少し大きい「2の累乗数」を考えます。</p>
+<p>例えば、57の場合は64（2の6乗）となり、64から57を引くことで、ホストから目的のサーバーまでに通過したルーターの数を推定することができます。</p>
+<p>一般的に、世界中のどの2台のホスト間であっても、通過するルーターが16個を超えることは稀です。</p>
+
+	  <div class="article-footer-copyright">
+
+    Except where otherwise noted , content on this site is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International license.</a>
+</div>
 	</div>
 
-
-		
-			
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2025/07/20/pingコマンドで通信先のOSを判別する方法/" ><i class="fa fa-file-o"></i>pingコマンドで通信先のOSを判別する方法</a>
-      </li>
-    
-      <li>
-        <a href="/2025/05/15/hexoで記事を投稿する/" ><i class="fa fa-file-o"></i>hexoで記事を投稿する</a>
-      </li>
-    
-      <li>
-        <a href="/2025/05/01/Hexo插入本地图片不显示问题/" ><i class="fa fa-file-o"></i>Hexo插入本地图片不显示问题</a>
-      </li>
-    
-      <li>
-        <a href="/2025/05/01/BUUCTF-极客大挑战-2019-PHP/" ><i class="fa fa-file-o"></i>BUUCTF[极客大挑战 2019]PHP</a>
-      </li>
-    
-      <li>
-        <a href="/2025/02/14/一个测试/" ><i class="fa fa-file-o"></i>一个测试</a>
-      </li>
-    
-  </ul>
-</div>
-
-		
-			
-<div class="widget">
-	<h4>Links</h4>
-	<ul class="blogroll list-unstyled">
 	
-		<li><i class="false"></i><a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" title="" target="_blank"]);">hexo-theme-bithack</a></li>
 	
-	</ul>
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2025/05/15/hexoで記事を投稿する/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
 </div>
 
 
-		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
 
+    
+</section>
+
+-->
+	
+	
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2025-07-20 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/Japanese/">Japanese<span>2</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
 
 
 
